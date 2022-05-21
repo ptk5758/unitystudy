@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     // string => string return 
 
     int someFunction()
-    { 
+    {
         int asdf = 6;
         return asdf;
     }
@@ -56,6 +56,18 @@ public class Player : MonoBehaviour
         string todayWeather = GetWeather();
         //Debug.Log(todayWeather);
         CryWeather();
+    }
+
+    int GetRandomNumber()
+    {
+        int value = Random.Range(0, 5); // 0 ~ 4 까지 랜덤 숫자를 리턴
+        return value;
+    }
+
+    void Update()
+    {
+        int randomValue = GetRandomNumber();
+        Debug.Log(randomValue);
     }
 
 }
