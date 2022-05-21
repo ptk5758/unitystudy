@@ -8,8 +8,9 @@ public class Bullet : MonoBehaviour
     public Transform point1;
     public Transform point2;
     public Transform point3;
-    public Transform point4;
+    public Transform point4;    
     public Transform target;
+    public Transform[] tetst;
     public int point; // 해당 변수값을 통해서 target 변수를 point 변수로 대입
 
 
@@ -21,22 +22,8 @@ public class Bullet : MonoBehaviour
         // 내위치가 0,0,0 목표위치가 1,1,1 속도는 0.5f 
         //Vector3 target = new Vector3(-1, 0.65f, 3.81f); 
 
-        if (point == 1)
-        {
-            target = point1;
-        }
-        else if (point == 2)
-        {
-            target = point2;
-        }
-        else if (point == 3)
-        {
-            target = point3;
-        }
-        else if (point == 4)
-        {
-            target = point4;
-        }
+        SetTarget();
+        KeyListener();
 
         // && => AND 연산자 왼쪽 거랑 오른쪽거 둘다 참일경우 true return 
         // 마우가 클릭하면서 ~ target Null 이아닐때
@@ -59,8 +46,55 @@ public class Bullet : MonoBehaviour
 
     }
 
-    void Start()
+    void KeyListener()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            point = 1;
+        }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            point = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            point = 3;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            point = 4;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            point++;
+            if (point == 5)
+            {
+                point = 1;
+            }
+        }
+
+    }
+
+
+    void SetTarget()
+    {
+        if (point == 1)
+        {
+            target = point1;
+        }
+        else if (point == 2)
+        {
+            target = point2;
+        }
+        else if (point == 3)
+        {
+            target = point3;
+        }
+        else if (point == 4)
+        {
+            target = point4;
+        }
     }
 }
