@@ -10,9 +10,7 @@ public class Bullet : MonoBehaviour
     public Transform point3;
     public Transform point4;    
     public Transform target;
-    public Transform[] tetst;
     public int point; // 해당 변수값을 통해서 target 변수를 point 변수로 대입
-
 
     void Update()
     {
