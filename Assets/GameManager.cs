@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour
             Debug.Log(books[index]);
             index++;
         }
+
+        // 배열 변수 만들고
+        // while 만들고
+        // 조건 넣어주고 
+        // 에디터에서 Array 내용 채워주고 
+        // 출력
     }
 
     void TestFor()
